@@ -19,16 +19,17 @@ MYSQL_DATABASE = os.getenv("railway")
 def get_db_connection():
     try:
         connection = pymysql.connect(
-            host=MYSQL_HOST,
-            port=MYSQL_PORT,
-            user=MYSQL_USER,
-            password=MYSQL_PASSWORD,
-            database=MYSQL_DATABASE,
+            host="junction.proxy.rlwy.net",
+            port=35063,
+            user="root",
+            password="ZwlzYNShfoMHlMpKmqIJDMdlcJJJnepC",
+            database="railway",
         )
         return connection
     except pymysql.MySQLError as e:
         print(f"Error connecting to the database: {e}")
         return None
+
 
     
 @app.route('/')
