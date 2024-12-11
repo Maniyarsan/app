@@ -4,19 +4,33 @@ import os
 import matplotlib.pyplot as plt
 import io
 import base64
+import pymysql
 
 app = Flask(__name__)
 
-# Database connection using environment variables
-def get_db_connection():
-    connection = mysql.connector.connect(
-        host=os.getenv('junction.proxy.rlwy.net'),
-        user=os.getenv('root'),
-        password=os.getenv('ZwlzYNShfoMHlMpKmqIJDMdlcJJJnepC'),
-        database=os.getenv('railway')
-    )
-    return connection
+# Database configuration from environment variables
+MYSQL_HOST = os.getenv("junction.proxy.rlwy.net")
+MYSQL_PORT = int(os.getenv("MYSQL_PORT", 35063))
+MYSQL_USER = os.getenv("root")
+MYSQL_PASSWORD = os.getenv("ZwlzYNShfoMHlMpKmqIJDMdlcJJJnepC")
+MYSQL_DATABASE = os.getenv("railway")
 
+# Utility function for database connection
+def get_db_connection():
+    try:
+        connection = pymysql.connect(
+            host=MYSQL_HOST,
+            port=MYSQL_PORT,
+            user=MYSQL_USER,
+            password=MYSQL_PASSWORD,
+            database=MYSQL_DATABASE,
+        )
+        return connection
+    except pymysql.MySQLError as e:
+        print(f"Error connecting to the database: {e}")
+        return None
+
+    
 @app.route('/')
 def survey():
     return render_template('survey.html')  # Survey form page
