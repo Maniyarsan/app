@@ -38,67 +38,84 @@ def survey():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    yes_no_answers = []
-    paragraphs = []
-    for i in range(1, 31):
-        yes_no_answers.append(request.form.get(f'question{i}_yes_no'))
-        paragraphs.append(request.form.get(f'question{i}_paragraph'))
+
+     # Extract form data
+    question1 = request.form.get("question1")
+    question2 = request.form.get("question2")
+    question3_அ = request.form.get("question3_அ")
+    question3_ஆ = request.form.get("question3_ஆ")
+    question4_அ= request.form.get("question4_அ")
+    question4_ஆ = request.form.get("question4_ஆ")
+    question5_அ = request.form.get("question5_அ")
+    question5_ஆ = request.form.get("question5_ஆ")
+    question6_அ = request.form.get("question6_அ")
+    question6_ஆ = request.form.get("question6_ஆ")
+    question7 = request.form.get("question7")
+    question8_அ = request.form.get("question8_அ")
+    question8_ஆ = request.form.get("question8_ஆ")
+    question8_இ = request.form.get("question8_இ")
+    question9 = request.form.get("question9")
+    question10_அ = request.form.get("question10_அ")
+    question10_ஆ = request.form.get("question10_ஆ")
+    question11_அ = request.form.get("question11_அ")
+    question11_ஆ = request.form.get("question11_ஆ")
+    question11_இ = request.form.get("question11_இ")
+    question12_அ = request.form.get("question12_அ")
+    question12_ஆ = request.form.get("question12_ஆ")
+    question13_அ = request.form.get("question13_அ")
+    question13_ஆ = request.form.get("question13_ஆ")
+    question14_அ = request.form.get("question14_அ")
+    question14_ஆ = request.form.get("question14_ஆ")
+    question14_இ = request.form.get("question14_இ")
+    question15 = request.form.get("question15")
+    question16 = request.form.get("question16")
+    question17_அ = request.form.get("question17_அ")
+    question17_ஆ = request.form.get("question17_ஆ")
+    question18_அ = request.form.get("question18_அ")
+    question18_ஆ = request.form.get("question18_ஆ")
+    question19 = request.form.get("question19")
+    question20_அ = request.form.get("question20_அ")
+    question20_ஆ = request.form.get("question20_ஆ")
+    question21_அ = request.form.get("question21_அ")
+    question21_ஆ = request.form.get("question21_ஆ")
+    question22_அ = request.form.get("question22_அ")
+    question22_ஆ = request.form.get("question22_ஆ")
+    question23 = request.form.get("question23")
+    question24 = request.form.get("question24")
+    question25_அ = request.form.get("question25_அ")
+    question25_ஆ = request.form.get("question25_ஆ")
+    question26_அ = request.form.get("question26_அ")
+    question26_ஆ = request.form.get("question26_ஆ")
+    question27 = request.form.get("question27")
+    question28 = request.form.get("question28")
+    question29 = request.form.get("question29")
     
-    # Save answers to MySQL database
+     # Connect to the database
     connection = get_db_connection()
     cursor = connection.cursor()
-    for i in range(30):
-        cursor.execute(
-            "INSERT INTO responses (question_number, yes_no_answer, paragraph_answer) VALUES (%s, %s, %s)",
-            (i + 1, yes_no_answers[i], paragraphs[i])
-        )
+
+      # Insert form data into the database
+    cursor.execute("""
+        INSERT INTO survey_responses (
+        question1, question2, question3_அ, question3_ஆ, question4_அ, question4_ஆ, question5_அ, question5_ஆ, question6_அ, question6_ஆ, question7, question8_அ, question8_ஆ, question8_இ, question9, question10_அ, question10_ஆ, question11_அ, question11_ஆ, question11_இ, question12_அ, question12_ஆ, question13_அ, question13_ஆ, question14_அ, question14_ஆ, question14_இ, question15, question16, question17_அ, question17_ஆ, question18_அ, question18_ஆ, question19, question20_அ, question20_ஆ, question21_அ, question21_ஆ, question22_அ, question22_ஆ, question23, question24, question25_அ, question25_ஆ, question26_அ, question26_ஆ, question27, question28, question29
+    )
+    VALUES (
+        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+    )
+""", (
+    question1, question2, question3_அ, question3_ஆ, question4_அ, question4_ஆ, question5_அ, question5_ஆ, question6_அ, question6_ஆ, question7, question8_அ, question8_ஆ, question8_இ, question9, question10_அ, question10_ஆ, question11_அ, question11_ஆ, question11_இ, question12_அ, question12_ஆ, question13_அ, question13_ஆ, question14_அ, question14_ஆ, question14_இ, question15, question16, question17_அ, question17_ஆ, question18_அ, question18_ஆ, question19, question20_அ, question20_ஆ, question21_அ, question21_ஆ, question22_அ, question22_ஆ, question23, question24, question25_அ, question25_ஆ, question26_அ, question26_ஆ, question27, question28, question29
+))
+
+    # Commit and close connection
     connection.commit()
     cursor.close()
     connection.close()
     return redirect(url_for('survey'))  # Redirect to the survey page or a thank-you page
 
-@app.route('/admin')
-def admin():
-    # Fetch survey responses and generate charts
-    connection = get_db_connection()
-    cursor = connection.cursor()
-    cursor.execute("SELECT question_number, yes_no_answer FROM responses")
-    data = cursor.fetchall()
-    cursor.close()
-    connection.close()
 
-    # Aggregate data for visualization
-    yes_counts = [0] * 30
-    no_counts = [0] * 30
-    for row in data:
-        question_number, yes_no_answer = row
-        if yes_no_answer == "Yes":
-            yes_counts[question_number - 1] += 1
-        else:
-            no_counts[question_number - 1] += 1
 
-    # Generate bar chart
-    questions = [f'Q{i + 1}' for i in range(30)]
-    x = range(30)
-    plt.figure(figsize=(12, 6))
-    plt.bar(x, yes_counts, color='g', alpha=0.7, label='Yes')
-    plt.bar(x, no_counts, color='r', alpha=0.7, label='No', bottom=yes_counts)
-    plt.xlabel('Questions')
-    plt.ylabel('Responses')
-    plt.title('Survey Results (Yes vs No)')
-    plt.xticks(x, questions, rotation=90)
-    plt.legend()
-
-    # Save chart to an in-memory buffer
-    img = io.BytesIO()
-    plt.tight_layout()
-    plt.savefig(img, format='png')
-    img.seek(0)
-    chart_url = base64.b64encode(img.getvalue()).decode('utf8')
-    plt.close()
-
-    # Render the admin page with the chart
-    return render_template('admin.html', chart_url=chart_url)
+    
+    
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))  # Use Render's assigned port or default to 5000

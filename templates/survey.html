@@ -8,16 +8,269 @@
 <body>
     <h1>Survey</h1>
     <form action="/submit" method="POST">
-        {% for i in range(1, 31) %}
-            <p>Question {{ i }}</p>
-            <label for="question{{ i }}_yes_no">Yes/No:</label>
-            <select name="question{{ i }}_yes_no" id="question{{ i }}_yes_no">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+
+        
+        <p>1. அரசின் நலத்திட்டங்கள் உங்களுக்கு மதிப்புடனும் மரியாதையுடனும் கிடைப்பது உங்கள் உரிமையா? அல்லது நீங்கள் அதிகாரத்திற்கு தேர்ந்தெடுக்கும்  பொறுப்பாளர்களின் கருணையா?</p>
+    
+            <select name="question1" id="question1">
+                <option value="உரிமை">உரிமை</option>
+                <option value="கருணை">கருணை</option>
             </select><br>
-            <label for="question{{ i }}_paragraph">Additional Comments:</label>
-            <textarea name="question{{ i }}_paragraph" id="question{{ i }}_paragraph" rows="4" cols="50"></textarea><br><br>
-        {% endfor %}
+
+        <p>2. இந்திய ஒன்றியத்தில் எந்தெந்த மொழிவழி மாநிலங்களில் அரசு மற்றும் தனியார் வேலைவாய்ப்புகளில் மண்ணின் மக்களுக்கு பெரும்பான்மை வேலைவாய்ப்புகளை உறுதிசெய்யும் சட்டம் அல்லது அரசாணை உள்ளது?</p>
+        
+            <textarea name="question2" id="question2" rows="4" cols="50"></textarea><br>
+
+        <p>3. அ. தமிழ்நாட்டின் வேலைவாய்ப்புகளில் 75 விழுக்காடு தமிழருக்கே என்று வாக்குறுதி கொடுத்து ஆட்சிக்கு வந்த தமிழ்நாடு அரசு இன்னும் அதை நிறைவேற்றவில்லை. உங்களின் அல்லது உங்கள்  உறவுகளின் குழுந்தைகளுக்கு வேலைவாய்ப்பை உறுதிப்படுத்த இதை நிறைவேற்றச் சொல்லி அரசுக்கு அழுத்தம் கொடுத்தீர்களா ?</p>
+        
+        <select name="question3_அ" id="question3_அ"> 
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br>
+        <p>ஆ. ஏன் அழுத்தம் கொடுக்கவில்லை? நீங்கள் வேலைவாய்ப்பை உறுதிப்படுத்தினால் தான் படித்த உங்கள் குழந்தைகள் வேலைக்கு வர முடியும்.</p>
+            <textarea name="question3_ஆ" id="question3_ஆ" rows="4" cols="50"></textarea><br><br> 
+
+        <p>4. அ. மொழி என்றால் என்ன? உலக இயக்கத்தில் அதன் பங்கு என்ன?</p>
+            <textarea name="question4_அ" id="question4_அ" rows="4" cols="50"></textarea><br><br>
+        <p> ஆ. இந்திய ஒன்றியம் மொழிவழி மாநிலங்களாக உருவாக்கப்பட்டது ஏன்?</p>
+            <textarea name="question4_ஆ" id="question4_ஆ" rows="4" cols="50"></textarea><br><br>
+
+        <p>5. அ. குழந்தை பிறந்த தேதியை பிறந்தநாளாக கொண்டாடுவீர்களா அல்லது பெயர் சூட்டிய நாளை கொண்டாடுவீர்களா?</p>
+
+            <select name="question5_அ" id="question5_அ">
+                <option value="பிறந்த தேதி">பிறந்த தேதி</option>
+                <option value="பெயர் சூட்டிய தேதி ">பெயர் சூட்டிய தேதி </option>
+            </select><br>
+
+        <p> ஆ. தமிழ்நாடு உருவான நாளை கொண்டாடுவீர்களா அல்லது தமிழ்நாட்டுக்கு பெயர் சூட்டிய நாளை கொண்டாடுவீர்களா?</p>
+
+            <select name="question5_ஆ" id="question5_ஆ">
+                <option value="உருவான நாள்">உருவான நாள்</option>
+                <option value="பெயர் சூட்டிய நாள்">பெயர் சூட்டிய நாள்</option>
+            </select><br>
+
+        <p>6. அ. மதுபானம் மற்றும் புகைப்பிடிக்கும் காட்சி இல்லாத சமீபத்தில் நீங்கள் பார்த்த படம் எது?</p>
+            <textarea name="question6_அ" id="question6_அ" rows="4" cols="50"></textarea><br><br>
+        <p>   ஆ. இந்த படங்களை பார்க்கும் போது அந்த பழக்கம் சரியானதுதான் என்ற எண்ணம் பார்வையாளர்களின் மனதில் விதைக்கப்படுமா? இல்லையா?</p>
+
+        <select name="question6_ஆ" id="question6_ஆ">
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br>
+
+        <p>7. கீழ்வரும் மாநிலங்கள் மற்றும் நாடுகளில் ஒரு குறிப்பிட்ட நாளை முதன்மையாக கொண்டு அதற்குப் பின் குடியேருவோர் 'வெளியார்' என வரையறுக்கப்படும் சட்டம் உள்ளது. அதேபோல், தமிழ்நாடு உருவான நாளான 1956 நவம்பர் 1க்குப் பிறகு தமிழ்நாட்டுக்கு வந்தவர்களை 'வெளியார்' என வரையறுக்க கோரிக்கை எழுகிறது. இப்படிப்பட்ட சட்டம் உருவாகும் பட்சத்தில், தமிழர்களின் கல்வி, வேலைவாய்ப்பு, நிலம் ஆகியவற்றை காப்பாற்ற இது வாய்ப்பாக அமையுமா?
+
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                }
+                .box {
+                    border: 2px solid #000; /* Outer border */
+                    border-collapse: collapse;
+                    max-width: 400px; /* Set the box width */
+                    margin: 20px auto; /* Center the box */
+                    display: grid;
+                    grid-template-columns: 1fr 1fr; /* Two columns */
+                }
+                .box p {
+                    margin: 0; /* Remove default margin */
+                    padding: 10px; /* Add space around text */
+                    border-bottom: 1px solid #000; /* Horizontal line */
+                    border-right: 1px solid #000; /* Vertical line for columns */
+                    text-align: left; /* Align text left */
+                }
+                .box p:last-child {
+                    border-bottom: none; /* Remove border for the last row */
+                }
+                .box p:nth-child(2n) {
+                    border-right: none; /* Remove border for the last column in each row */
+                }
+            </style>
+        </head>
+        <body>
+            <div class="box">
+                <p>வட அமெரிக்கா</p>
+                <p>1934 மே 24</p>
+                <p>பிரிட்டன்</p>
+                <p>1949 சனவரி 1</p>
+                <p>சீனா</p>
+                <p>1949 அக்டோபர் 1</p>
+                <p>இந்தியா</p>
+                <p>1950 சனவரி 26</p>
+                <p>அசாம்</p>
+                <p>1971 மார்ச் 24</p>
+                <p>சார்கண்ட்</p>
+                <p>1985</p>
+                <p>உத்ரகாண்ட்</p>
+                <p>1985</p>
+            </div> </p>
+        <textarea name="question7" id="question7" rows="4" cols="50"></textarea><br><br>
+
+
+        <p>8. அ. அரசு டாஸ்மாக் நிறுவனம் நஷ்டத்தில் இயங்கிக் கொண்டிருப்பது உங்களுக்கு தெரியுமா? </p>
+        <select name="question8_அ" id="question8_அ">
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br>
+        
+        <p>   ஆ. விவசாயம், நெசவு போன்ற அத்தியாவச வேலையில் உள்ளவர்களுக்கு தொழில் சார்ந்த வேலைகளில் ஈடுபடும் போது இழப்பு ஏற்பட்டு இறந்தால் அரசு 10 லட்சம்  கொடுக்குமா?</p>
+        <select name="question8_ஆ" id="question8_ஆ">
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br>
+
+        <p>   இ. ஆனால் நீங்கள் தேர்ந்தெடுத்த அரசு கள்ளச்சாராயம் குடித்து இறந்தவர்களுக்கு 10 லட்சம் கொடுத்தது. கள்ளச்சாராயம் குடிப்பது குற்றம். குற்றம் செய்து இறந்தவர்களுக்கு அரசு 10 லட்சம் இழப்பீட்டு தொகை கொடுத்ததை நீங்கள் கண்டித்தீர்களா?</p>
+        <select name="question8_இ" id="question8_இ">
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br><br>
+
+        <p>9. உங்களின் கல்வி, மருத்துவம், வேலை ஆகியவற்றை நீங்கள் முடிவு செய்ய வேண்டுமா? அல்லது  தில்லி அரசு முடிவு செய்ய வேண்டுமா?</p>
+        <select name="question9" id="question9">
+            <option value="நாம்">நாம்</option>
+            <option value="தில்லி அரசு">தில்லி அரசு</option> 
+        </select><br><br>
+        <textarea name="question9_paragraph" id="question9_paragraph" rows="4" cols="50"></textarea><br>
+
+        <p>10. அ. புதிய குடியிரிமைச் சட்டம் பாகிஸ்தான், வங்கதேசம், ஆப்கானிஸ்தான் நாடுகளில் உள்ள இந்து, சீக்கிய, பௌத்த, கிறுத்துவ மதத்தினரை இந்தியர்களாக ஏற்கிறது. ஆனால் இலங்கையைச் சேர்ந்த இந்துக்களை மட்டும் இந்தியர்களாக ஏற்க மறுக்கிறது ஏன்?</p>
+            <textarea name="question10_அ" id="question10_அ" rows="4" cols="50"></textarea><br>
+
+        <p>    ஆ. திபத்திலிருந்து அகதிகளாக இந்தியா வந்தவர்களுக்கு அனைத்துவிதமான சலுகைகளும் கொடுக்கப்படுகிறது. ஆனால் இலங்கையிலிருந்து அகதிகளாக இந்தியா வந்த தமிழர்கள் மட்டும் ஏன் எந்தவித உரிமைகளுமின்றி முகாம்களிலேயே அடைக்கப்பட்டுள்ளனர்.</p> 
+            <textarea name="question10_ஆ" id="question10_ஆ" rows="4" cols="50"></textarea><br>
+
+        <p>11. அ. விவசாய மக்களின் விருப்பமின்றி தொழிற்சாலை அமைப்பதற்கு நிலம் எடுப்பது சரியா?</p>
+    
+            <select name="question11_அ" id="question11_அ">
+                <option value="சரி">சரி</option>
+                <option value="தவறு">தவறு</option>
+            </select><br>  
+            
+        <p>   ஆ. விவசாய நிலங்களை தொழிற்சாலைகளாகவும் பெரும் வணிக தலங்களாக மாற்றுவதை தடுக்கும் சட்டம் வேண்டுமா? வேண்டாமா?</p>
+    
+            <select name="question11_ஆ" id="question11_ஆ">
+                <option value="வேண்டும்">வேண்டும்</option>
+                <option value="வேண்டாம்">வேண்டாம்</option>
+            </select><br>  
+            
+        <p>   இ. விவசாயத்தை இயற்கை முறையிலும் லாபகரமானதாக அமைத்திட அரசு என்ன செய்ய வேண்டும் ?  உங்கள் கருத்து என்ன?</p>
+                 <textarea name="question11_இ" id="question11_இ" rows="4" cols="50"></textarea><br>
+
+        <p>12.	அ. முருகன், சிவன் போன்ற கடவுள்கள் பேசியது மற்றும் அவர்களுக்கு பிடித்த மொழி எது?</p>
+         <textarea name="question12_அ" id="question12_அ" rows="4" cols="50"></textarea><br>   
+
+        <p>    ஆ. தமிழ்நாட்டின் அனைத்து கோவில்களிலும் தமிழில் அர்ச்சனை செய்யப்படுகிறதா? ஏன் இல்லையெனில்?</p>    
+        <select name="question12_ஆ" id="question12_ஆ">
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br><br>
+        <textarea name="question12_இ" id="question12_இ" rows="4" cols="50"></textarea><br> 
+             
+        <p>13.	அ. உங்கள் வீட்டிற்கு எந்த ஆற்றிலிருந்து தண்ணீர் வருகிறது?</p>   
+         <textarea name="question13_அ" id="question13_அ" rows="4" cols="50"></textarea><br> 
+        
+        <p>ஆ. அந்த ஆற்றின் குறுக்கே கர்நாடக அரசு அணை கட்டினால் குடிநீருக்கு எங்கே செல்வீர்கள் ?</p>
+        <textarea name="question13_ஆ" id="question13_ஆ" rows="4" cols="50"></textarea><br> 
+
+        <p>14.	அ. உங்களுக்குத் தெரிந்த மக்கள் நலத் திட்டத்தில் ஊழல் செய்யாத ஒரு கவுன்சிலர், எம்.பி, எம்.எல்.ஏ யாரேனும் இருக்கிறார்களா?</p>
+        <select name="question14_அ" id="question14_அ">
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br>
+
+        <p>ஆ. மக்கள் நலத்திட்டத்தில் ஊழல் செய்யப்படுவதால் தரமான கல்வி, வேலைவாய்ப்புக்கு உத்தரவாதம், தரமான குடிநீர் ஆகியவை உங்கள் அடுத்த தலைமுறைக்கு கிடைக்கப் போவதில்லை என்பது உங்களுக்கு தெரியுமா?</p>
+        <select name="question14_ஆ" id="question14_ஆ">
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br>
+
+        <p>இ. அதை அறிந்திருந்தும் மீண்டும் அவர்களை தேர்ந்தெடுப்பது அறிவுடைய செயலா? இல்லையா?</p>
+        <select name="question14_இ" id="question14_இ">
+            <option value="ஆம்">ஆம்</option>
+            <option value="இல்லை">இல்லை</option>
+        </select><br>
+
+        <p>15. இன்னும் எந்தெந்த நாடுகள் புதிதாக உருவாக போராடிக் கொண்டிருக்கின்றன?</p>
+        <textarea name="question15" id="question15" rows="4" cols="50"></textarea><br> 
+        
+        <p>16. ஏன் ஆங்கில வழியில் படித்தும் பெரும்பான்மையான மாணவர்களால் ஆங்கிலத்தில் சரளமாக பேச முடியவில்லை?</p>
+        <textarea name="question16" id="question16" rows="4" cols="50"></textarea><br>
+        
+        <p>17.	அ. கொரோனா காலகட்டத்தில் போடப்பட்ட ஊசி அதை தடுக்க உதவியது அதிகமா ? பக்கவிளைவை ஏற்படுத்தியது அதிகமா?</p>
+        <select name="question17_அ" id="question17_அ">
+            <option value="தடுக்க உதவியது">தடுக்க உதவியது</option>
+            <option value="பக்கவிளைவை ஏற்படுத்தியது">பக்கவிளைவை ஏற்படுத்தியது</option>
+        </select><br><br>
+
+        <p>ஆ. அரசு எதைக் கூறினாலும் அதை ஆராயாமல் பின்பற்றுவது சரியா? தவறா?</p>
+        <select name="question17_ஆ" id="question17_ஆ">
+            <option value="சரி">சரி</option>
+            <option value="தவறு">தவறு</option>
+        </select><br> 
+
+        <p>18.	அ. ஒரு மருத்துவராக யார் இருந்தால் அவர்களை நீங்கள் மருத்துவம் பார்க்க ஏற்றுக்கொள்வீர்கள்?<br> ஆ. உங்கள் வண்டியை ஓட்டுவதற்கான அனுபவம் உள்ள ஓட்டுனரை தேர்ந்தெடுப்பீர்களா? அல்லது அனுபவமற்ற ஓட்டுனரை தேர்ந்தெடுப்பீர்களா?</p>
+        <textarea name="question18_அ" id="question18_அ" rows="4" cols="50"></textarea><br>
+
+        <p>இ. அரசியலில் உங்கள் தலைவராக தேர்ந்தெடுக்க அரசியல் அனுபவம் உள்ளவரை தேர்ந்தெடுப்பீர்களா? அல்லது சினிமா, விளையாட்டு போன்ற பிற துறைகளில் உள்ள  பிரபலமானவர்கள்  வந்தால் தேர்ந்தெடுப்பீர்களா?</p>
+        <select name="question18_ஆ" id="question18_ஆ">
+            <option value="அனுபவம் உள்ளவர்கள் ">அனுபவம் உள்ளவர்கள் </option>
+            <option value="பிற துறை பிரபலங்கள்">பிற துறை பிரபலங்கள்</option>
+        </select><br>
+            
+        <p>19.	மேகத்தை தடுத்து மழையைக் கொடுப்பது மலைகள் தான். அதை வெட்டினால் குடிநீர் தட்டுப்பாடு ஏற்படும். நீங்கள் தேர்ந்தெடுத்த ஆட்சியாளர்கள் அதை வெட்டி எடுக்கிறார்கள். ஏன் வேடிக்கை பார்க்கிறீர்கள்?</p>
+        <textarea name="question19" id="question19" rows="4" cols="50"></textarea><br>
+
+        <p>20. அ. 1956 க்கு பிறகு மொழிவழி மாநிலங்களாக பிரிக்கப்பட்டபோது நாம் இழந்த இடங்கள் என்ன?</p>
+        <textarea name="question20_அ" id="question20_அ" rows="4" cols="50"></textarea><br>
+
+        <p>ஆ. எதற்காக மொழிவழி மாநிலங்களாக பிரிக்கப்பட்டன?</p>
+        <textarea name="question20_ஆ" id="question20_ஆ" rows="4" cols="50"></textarea><br>
+
+        <p>21. அ. வெண்ணந்தூரில் உள்ள நூலகங்களின் எண்ணிக்கை எத்தனை?</p>
+        <textarea name="question21_அ" id="question21_அ" rows="4" cols="50"></textarea><br>
+        <p>ஆ. அவற்றில் எதற்கு சென்றுள்ளீர்கள்?</p>
+        <textarea name="question21_ஆ" id="question21_ஆ" rows="4" cols="50"></textarea><br>
+
+        <p>22. அ. இந்தி பேசும் மாநிலங்களில் உள்ள தமிழ்நாட்டு மக்களின் எண்ணிக்கை என்ன?</p>
+        <textarea name="question22_அ" id="question22_அ" rows="4" cols="50"></textarea><br>
+        <p>ஆ. தமிழ்நாட்டில் உள்ள வடநாட்டு மக்களின் எண்ணிக்கை எவ்வளவு?</p>
+        <textarea name="question22_ஆ" id="question22_ஆ" rows="4" cols="50"></textarea><br>
+
+        <p>23. தமிழரின் ஆட்சி அதிகாரம் இந்திய ஒன்றியத்திடமும், திராவிட மாடல் ஆட்சியாளரிடமும் சிக்கிய பிறகு இழந்த நீர் நிலைகளின் எண்ணிக்கை என்ன?</p>
+        <textarea name="question23" id="question23" rows="4" cols="50"></textarea><br>
+
+        <p>24. மழைக்காலத்தில் நீர்நிலை ஓரம் குடியிருக்கும் மக்கள் வீடுகள் நீரில் மூழ்குகின்றன. அவர்களுக்கு அரசு நிரந்தரமான மாற்று குடியிருப்பு அமைக்க இடம் கொடுக்க வேண்டுமா? வேண்டாமா?</p>
+        <select name="question24" id="question24">
+            <option value="வேண்டும்">வேண்டும்</option>
+            <option value="வேண்டாம்">வேண்டாம்</option>
+        </select><br>
+
+       <p>25. அ. பிற மாநிலங்களில் எத்தனை வருடங்கள் குடியிருந்தால் வாக்காளர் மற்றும் ரேஷன் அட்டை தருகிறார்கள்?</p>
+       <textarea name="question25_அ" id="question25_அ" rows="4" cols="50"></textarea><br>
+       <p>ஆ. தமிழ்நாட்டில் மட்டும் ஏன் வந்தவுடன் கொடுக்கப்படுகிறது?</p>
+       <textarea name="question25_ஆ" id="question25_ஆ" rows="4" cols="50"></textarea><br>
+
+       <p>26. அ. சாதி வாரி கணக்கெடுப்பு எடுக்கலாமா? வேண்டாமா?</p>
+       <select name="question26_அ" id="question26_அ">
+           <option value="வேண்டும்">வேண்டும்</option>
+           <option value="வேண்டாம்">வேண்டாம்</option>
+       </select><br>
+
+       <p>ஆ. சாதி வாரி கணக்கெடுப்பு எடுக்க வலியுறுத்தும் கட்சிகள் மற்றும்அமைப்புகள் எவை?</p>
+       <textarea name="question26_ஆ" id="question26_ஆ" rows="4" cols="50"></textarea><br>
+
+       <p>27. தமிழ்நாட்டின் வேலைவாய்ப்புகளை தமிழருக்கே என உறுதிப்படுத்த மிசோரம், நாகலாந்து, அருணாசலப் பிரதேசம் போன்ற மாநிலங்களில் உள்ளது போல், வேலைக்கு வரும் வெளி மாநிலத்தவர்கள் அனுமதி பெற்று வருகிற VISA முறையை (உள் அனுமதி சீட்டு) தமிழ்நாட்டிலும் செயல்படுத்தலாமா?</p>
+       <select name="question27" id="question27">
+           <option value="வேண்டும்">வேண்டும்</option>
+           <option value="வேண்டாம்">வேண்டாம்</option>
+       </select><br>
+
+       <p>28. தமிழ்நாட்டில் அமைந்துள்ள தொடர்வண்டித்துறை, ஐசிஎப், வருமானவரித்துறை அலுவலகம், உற்பத்தி வரித்துறை அலுவலகம் மற்றும் திருச்சி பெல் நிறுவனங்களில் ஒவ்வொரு ஆண்டும் எவ்வளவு பணி நிரப்பப்பட்டன மற்றும் அவற்றில் எவ்வளவு தமிழர்கள் இடம் பெற்று இருந்தனர் என்பது உங்களுக்கு தெரியுமா?</p>
+       <textarea name="question28" id="question28" rows="4" cols="50"></textarea><br>
+
+       <p>29. அரசியல் என்றால் என்ன?</p>
+       <textarea name="question29" id="question29" rows="4" cols="50"></textarea><br><br>
+       
         <input type="submit" value="Submit">
     </form>
 </body>
