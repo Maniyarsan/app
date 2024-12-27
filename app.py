@@ -40,6 +40,12 @@ def survey():
 def submit():
 
      # Extract form data
+    பெயர் = request.form.get("பெயர்")
+    வயது = request.form.get("வயது")
+    பாலினம் = request.form.get("பாலினம்")
+    தொழில் = request.form.get("தொழில்")
+    கல்வியறிவு = request.form.get("கல்வியறிவு")
+    கட்சி = request.form.get("கட்சி")
     question1 = request.form.get("question1")
     question2 = request.form.get("question2")
     question3_அ = request.form.get("question3_அ")
@@ -81,7 +87,8 @@ def submit():
     question22_அ = request.form.get("question22_அ")
     question22_ஆ = request.form.get("question22_ஆ")
     question23 = request.form.get("question23")
-    question24 = request.form.get("question24")
+    question24_அ = request.form.get("question24_அ")
+    question24_ஆ = request.form.get("question24_ஆ")
     question25_அ = request.form.get("question25_அ")
     question25_ஆ = request.form.get("question25_ஆ")
     question26_அ = request.form.get("question26_அ")
@@ -97,13 +104,13 @@ def submit():
       # Insert form data into the database
     cursor.execute("""
         INSERT INTO survey_responses (
-        question1, question2, question3_அ, question3_ஆ, question4_அ, question4_ஆ, question5_அ, question5_ஆ, question6_அ, question6_ஆ, question7, question8_அ, question8_ஆ, question8_இ, question9, question10_அ, question10_ஆ, question11_அ, question11_ஆ, question11_இ, question12_அ, question12_ஆ, question13_அ, question13_ஆ, question14_அ, question14_ஆ, question14_இ, question15, question16, question17_அ, question17_ஆ, question18_அ, question18_ஆ, question19, question20_அ, question20_ஆ, question21_அ, question21_ஆ, question22_அ, question22_ஆ, question23, question24, question25_அ, question25_ஆ, question26_அ, question26_ஆ, question27, question28, question29
+        பெயர், வயது, பாலினம், தொழில், கல்வியறிவு, கட்சி, question1, question2, question3_அ, question3_ஆ, question4_அ, question4_ஆ, question5_அ, question5_ஆ, question6_அ, question6_ஆ, question7, question8_அ, question8_ஆ, question8_இ, question9, question10_அ, question10_ஆ, question11_அ, question11_ஆ, question11_இ, question12_அ, question12_ஆ, question13_அ, question13_ஆ, question14_அ, question14_ஆ, question14_இ, question15, question16, question17_அ, question17_ஆ, question18_அ, question18_ஆ, question19, question20_அ, question20_ஆ, question21_அ, question21_ஆ, question22_அ, question22_ஆ, question23, question24_அ, question24_ஆ, question25_அ, question25_ஆ, question26_அ, question26_ஆ, question27, question28, question29
     )
     VALUES (
-        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+         %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
     )
 """, (
-    question1, question2, question3_அ, question3_ஆ, question4_அ, question4_ஆ, question5_அ, question5_ஆ, question6_அ, question6_ஆ, question7, question8_அ, question8_ஆ, question8_இ, question9, question10_அ, question10_ஆ, question11_அ, question11_ஆ, question11_இ, question12_அ, question12_ஆ, question13_அ, question13_ஆ, question14_அ, question14_ஆ, question14_இ, question15, question16, question17_அ, question17_ஆ, question18_அ, question18_ஆ, question19, question20_அ, question20_ஆ, question21_அ, question21_ஆ, question22_அ, question22_ஆ, question23, question24, question25_அ, question25_ஆ, question26_அ, question26_ஆ, question27, question28, question29
+    பெயர், வயது, பாலினம், தொழில், கல்வியறிவு, கட்சி, question1, question2, question3_அ, question3_ஆ, question4_அ, question4_ஆ, question5_அ, question5_ஆ, question6_அ, question6_ஆ, question7, question8_அ, question8_ஆ, question8_இ, question9, question10_அ, question10_ஆ, question11_அ, question11_ஆ, question11_இ, question12_அ, question12_ஆ, question13_அ, question13_ஆ, question14_அ, question14_ஆ, question14_இ, question15, question16, question17_அ, question17_ஆ, question18_அ, question18_ஆ, question19, question20_அ, question20_ஆ, question21_அ, question21_ஆ, question22_அ, question22_ஆ, question23, question24_அ, question24_ஆ, question25_அ, question25_ஆ, question26_அ, question26_ஆ, question27, question28, question29
 ))
 
     # Commit and close connection
